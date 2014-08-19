@@ -8,7 +8,7 @@
 2. [node.js](http://nodejs.org/)
 3. [Grunt](http://gruntjs.com/)
 
-## Instalation
+## Install
 
 1. Clone the repo:
 ```
