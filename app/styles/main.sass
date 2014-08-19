@@ -1,4 +1,38 @@
+// Moods font
+@font-face
+    font
+        family: 'moods'
+        style: normal
+        weight: normal
+    src: url('fonts/moods.eot?-18bfu6')
+    src: url('fonts/moods.eot?#iefix-18bfu6') format('embedded-opentype'), url('fonts/moods.woff?-18bfu6') format('woff'), url('fonts/moods.ttf?-18bfu6') format('truetype'), url('fonts/moods.svg?-18bfu6#moods') format('svg')
+
+[class^='icon-'], [class*=' icon-']
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font
+        family: 'moods'
+        style: normal
+        variant: normal
+        weight: normal
+    line-height: 1
+    speak: none
+    text-transform: none
+
+.mood-angry:before
+    content: '\e602'
+
+.mood-happy:before
+    content: '\e600'
+
+.mood-neutral:before
+    content: '\e603'
+
+.mood-sad:before
+    content: '\e601'
+
+// Page
 body
     background: silver
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
     color: black
