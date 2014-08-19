@@ -1,0 +1,17 @@
+doctype html
+head
+    meta(charset="utf-8")
+    title :( :/ daily mood :| :)
+    meta(name="viewport", content="width=device-width")
+
+    //- build:css(.tmp) styles/main.css
+    link(rel="stylesheet", href="styles/main.css")
+    //- endbuild
+body
+    .content
+        h2.title Hello daily mood!
+
+    //- build:js(.tmp) scripts/main.js
+    script(src="bower_components/zepto/zepto.js")
+    script(src="scripts/main.js")
+    //- endbuild

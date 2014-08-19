@@ -2,8 +2,6 @@
     "name": "daily-mood-client",
     "version": "0.0.1",
     "dependencies": {
-        "pure": "~0.2.0",
-        "jquery": "~1.9.1"
-    },
-    "devDependencies": {}
+        "zepto": "~1.1.4"
+    }
 }
