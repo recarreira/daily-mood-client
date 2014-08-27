@@ -1,5 +1,5 @@
 // TODO: Get data from API
-- var moods = [1,2,3,4]
+- var moods = [4,3,2,1]
 doctype html
 head
     meta(charset="utf-8")
@@ -16,8 +16,8 @@ body
             h2.title Oi, como está se sentindo agora?
             ul.moods
                 - each moodLevel in moods
-                    li.mood
-                        span(class='mood-#{moodLevel}')
+                    li.item
+                        span(class='mood mood-#{moodLevel}', data-mood-level='#{moodLevel}')
 
     //- build:js(.tmp) scripts/main.js
     script(src="bower_components/zepto/zepto.js")
