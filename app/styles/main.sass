@@ -1,16 +1,16 @@
-// Moods font
+// Font
 @font-face
-    font
+    font:
         family: 'moods'
         style: normal
         weight: normal
     src: url('fonts/moods.eot?-18bfu6')
     src: url('fonts/moods.eot?#iefix-18bfu6') format('embedded-opentype'), url('fonts/moods.woff?-18bfu6') format('woff'), url('fonts/moods.ttf?-18bfu6') format('truetype'), url('fonts/moods.svg?-18bfu6#moods') format('svg')
 
-[class^='icon-'], [class*=' icon-']
+[class^='mood-'], [class*=' mood-']
     -moz-osx-font-smoothing: grayscale
     -webkit-font-smoothing: antialiased
-    font
+    font:
         family: 'moods'
         style: normal
         variant: normal
@@ -19,20 +19,65 @@
     speak: none
     text-transform: none
 
-.mood-angry:before
+.mood-1:before
+    color: #cc0000
     content: '\e602'
 
-.mood-happy:before
-    content: '\e600'
-
-.mood-neutral:before
-    content: '\e603'
-
-.mood-sad:before
+.mood-2:before
+    color: #cc862a
     content: '\e601'
 
+.mood-3:before
+    color: blue
+    content: '\e603'
+
+.mood-4:before
+    color: green
+    content: '\e600'
+
 // Page
-body
-    background: silver
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
-    color: black
+body, html, .container
+    height: 100%
+    margin: 0
+    padding: 0
+    width: 100%
+
+.container
+    background: linear-gradient(to top, white 0%, #bcbccf 100%)
+    position: relative
+
+.content
+    $size: 50%
+    -webkit-transform: translate(-$size, -$size)
+    left: $size
+    margin: 0
+    margin-right: -$size
+    position: absolute
+    top: $size
+    transform: translate(-$size, -$size)
+
+.moods
+    list-style-type: none
+    padding: 0
+    .mood
+        float: left
+        font-size: 12em
+        margin: 0.2em
+        transition: 0.1s ease-in-out
+        &:hover
+            -webkit-transform: scale(1.1)
+            opacity: 0.8
+            transform: scale(1.1)
+        &:active
+            -webkit-transform: scale(0.9)
+            opacity: 1
+            transform: scale(0.9)
+
+.title
+    color: #668
+    font:
+        family: Helvetica Neue, Helvetica, Arial, sans-serif
+        size: 3em
+        weight: normal
+    letter-spacing: -0.03em
+    text-align: center
