@@ -1,4 +1,4 @@
-// TODO: Get data from API
+- // TODO: Get data from API
 - var moods = [4,3,2,1]
 doctype html
 head
@@ -6,21 +6,26 @@ head
     title daily mood :)
     meta(name="viewport", content="width=device-width")
 
-    //- build:css(.tmp) styles/main.css
+    // build:css(.tmp) styles/main.css
     link(rel="stylesheet", href="styles/main.css")
-    //- endbuild
+    // endbuild
 body
     .overlay
     .container
         .content
-            // TODO: Get messages from API
-            h2.title Oi, como está se sentindo agora?
+            - // TODO: Get messages from API
+            h2.title How do you feel today?
             ul.moods
                 - each moodLevel in moods
                     li.item
                         span(class='mood mood-#{moodLevel}', data-mood-level='#{moodLevel}')
 
-    //- build:js(.tmp) scripts/main.js
-    script(src="bower_components/zepto/zepto.js")
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src="../bower_components/zepto/zepto.js")
+    // endbower
+    // endbuild
+
+    // build:js({app,.tmp}) scripts/main.js
     script(src="scripts/main.js")
-    //- endbuild
+    // endbuild

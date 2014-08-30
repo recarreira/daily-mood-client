@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         watch: {
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
+                tasks: ['coffee:server']
             },
             coffeeTest: {
                 files: ['test/spec/{,*/}*.coffee'],
@@ -148,7 +148,7 @@ module.exports = function (grunt) {
         },
 
         coffee: {
-            dist: {
+            server: {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/scripts',
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
                         '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= yeoman.dist %>/fonts/*'
+                        '<%= yeoman.dist %>/styles/fonts/*'
                     ]
                 }
             }
@@ -214,7 +214,8 @@ module.exports = function (grunt) {
                 dirs: ['<%= yeoman.dist %>']
             },
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
+            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            js: ['<%= yeoman.dist %>/script/{,*/}*.js']
         },
 
         imagemin: {
@@ -271,7 +272,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         'images/{,*/}*.{webp,gif}',
-                        'fonts/*'
+                        'styles/fonts/*'
                     ]
                 }, {
                     expand: true,
@@ -286,7 +287,7 @@ module.exports = function (grunt) {
 
         concurrent: {
             server: [
-                'coffee:dist',
+                'coffee:server',
                 'compass:server'
             ],
             test: [
@@ -294,7 +295,6 @@ module.exports = function (grunt) {
                 'compass'
             ],
             dist: [
-                'coffee',
                 'compass:dist',
                 'imagemin',
                 'svgmin',
@@ -344,6 +344,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'jade',
+        'coffee:server',
         'useminPrepare',
         'concurrent:dist',
         'cssmin',
